@@ -1,5 +1,27 @@
+:root {
+    --cGray: rgb(58, 58, 58);
+    --cLightGray: rgb(206, 206, 206);
+}
+
 .CVPage{
-    background-color: bisque;
     width: 210mm;
     height: 297mm;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.CVPage-TopMargin{
+    height: 5mm;
+}
+.CVPage-Content{
+    display: flex;
+    gap: 3mm;
+    
+}
+.CVPage-RightMargin {
+    width: 5mm;
+    height: 5mm;
+    background-color: aqua;
+}
+.CVPagePrinting{
+    box-shadow:none;
 }

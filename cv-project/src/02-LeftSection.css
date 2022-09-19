@@ -1,0 +1,41 @@
+/* :root{
+    --cGray: rgb(58, 58, 58);
+    --cLightGray: rgb(206, 206, 206);
+} */
+
+.LeftSection{
+    width: 70mm;
+    border-right: 2mm solid var(--cGray);
+    border-top: 2mm solid var(--cGray);
+    border-top-right-radius: 1%;
+}
+.LeftSection-Image{
+    width: 70mm;
+    border-radius: 1%;
+}
+.LeftSection-BrTag{
+    display: block;
+    content: "";
+    margin-top: 2mm;
+}
+.LeftSection-Fieldset{
+border-radius: 2%;
+border: 0.5mm solid var(--cLightGray);
+margin: 0 1mm 0 5mm;
+}
+.LeftSection-Fieldset legend {
+    font-weight: bold;
+    padding: 0 3mm 0 3mm ;
+}
+.LeftSection-Labels{
+    font-weight: bold;
+}
+.LeftSection-InputField{
+    border: none;
+}
+
+
+.LeftSection-Margin0{
+    /* background-color: blue; */
+    margin: 0;
+}

@@ -1,0 +1,18 @@
+.RightSection-H2Container{
+    margin: 0;
+    background-color: aqua;
+}
+.RightSection-H2{
+    border: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+.RightSection-Fieldset {
+    border-radius: 2%;
+    border: 0.5mm solid var(--cLightGray);
+    margin: 0 1mm 0 5mm;
+}
+.RightSection-Fieldset legend {
+    font-weight: bold;
+    padding: 0 3mm 0 3mm;
+}

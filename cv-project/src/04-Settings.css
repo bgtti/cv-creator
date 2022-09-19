@@ -1,0 +1,102 @@
+:root {
+    --cBlue: #002d6b;
+    --cBlueGray: #002d6b33;
+    --cOrange: #ff3d3c;
+    --cGray: rgb(58, 58, 58);
+    --cBackgroundGray: rgb(214, 214, 214);
+}
+.Settings{
+    padding-bottom: 5px;
+    width: 210mm;
+    color: var(--cGray);
+}
+.Settings-TitleAndSub{
+    margin-bottom: .7em;
+}
+.Settings-TitleAndSub-Logo{
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5em;
+    border-bottom: 2px solid var(--cBlue);
+}
+.Settings-TitleAndSub-Logo img {
+    height: 1.6em;
+    padding: 0.3em;
+    border-top: 2px solid var(--cBlue); 
+    border-left: 2px solid var(--cBlue); 
+    border-right: 2px solid var(--cBlue);
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+}
+.Settings-Title{
+    color: var(--cBlue);
+    font-size: 2em;
+}
+.Settings-Title span{
+    color: var(--cOrange);
+}
+.Settings-SubTitle {
+    color: var(--cBlue);
+    font-size: 1.2em;
+}
+.Settings-P{
+    margin-bottom: 5px;
+}
+.Settings-H3{
+    margin-bottom: 5px;
+    color: var(--cBlue);
+}
+.Settings-Fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 5px;
+    border-radius: 2%;
+    border: 0.5mm solid var(--cBlueGray);
+    padding: 0.5mm;
+}
+.Settings-Fieldset legend {
+    font-weight: bold;
+    padding: 0 3mm 0 3mm;
+    margin-left: 3mm;
+}
+
+@media (min-width: 211mm) {
+    .Settings-Fieldset legend {
+            text-align: center;
+            margin-left: 0;
+        }
+}
+
+.Settings-Fieldset select {
+    background-color: var(--cBackgroundGray);
+    margin-left: 5px;
+    color: var(--cGray);
+    cursor: pointer;
+}
+.Settings-Fieldset option:checked,
+.Settings-Fieldset option:focus,
+.Settings-Fieldset option:active,
+.Settings-Fieldset option:hover  {
+    background: var(--cBlueGray);
+    cursor: pointer;
+}
+
+.Settings-Btn{
+    width: 10em;
+    margin: 15px 0;
+    margin-right: 10px;
+    padding: 0.5em;
+    border-radius: 20px;
+    font-size: 0.8em;;
+    font-weight: bold;
+    color: var(--cBlue);
+    border: none;
+    background-color: var(--cBlueGray);
+    cursor: pointer;
+}
+@media(hover:hover){
+    .Settings-Btn:hover{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
