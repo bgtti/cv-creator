@@ -32,6 +32,7 @@ margin: 0 1mm 0 5mm;
 }
 .LeftSection-InputField{
     border: none;
+    width: 60mm;
 }
 
 
@@ -75,4 +76,21 @@ margin: 0 1mm 0 5mm;
 }
 .LeftSection-LangLevelColoured{
     background-color: black;
+}
+/* Skills */
+.LeftSection-SkillsSubContainer{
+    display: flex;
+    gap: 1mm;
+    align-items: center;
+}
+.LeftSection-SkillsBulletPoint{
+    border-radius: 50%;
+    height: 2mm;
+    width: 2mm;
+    border: 0.5mm solid black;
+    background-color: black;
+}
+.LeftSection-SkillsInput{
+    border: none;
+    width: 58mm;
 }
