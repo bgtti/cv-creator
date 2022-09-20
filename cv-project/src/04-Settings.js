@@ -5,16 +5,15 @@ import Logo from './Images/Logo.png'
 class Settings extends Component {
     constructor(props) {
         super(props);
-        // this.state={ this should go to the parent
-        //     LanguageSetting: 3,
-        //     SkillsSetting: 3,
-        //     ProfileSetting: 3,
-        // };
         this.printPDF = this.printPDF.bind(this);
+        this.changeSettings = this.changeSettings.bind(this);
     }
     printPDF(e) {
         e.preventDefault();
         this.props.pdfPrint()
+    }
+    changeSettings(e) {
+        this.props.changeSettings(e);
     }
     render() {
         return (
@@ -27,13 +26,13 @@ class Settings extends Component {
 
                     <h2 className='Settings-SubTitle'>Your resume made easy</h2>
                 </div>
-                <p className='Settings-P'>You can edit the template bellow and make it your own. Adjust the number of fields under 'Settings' and click 'Save Settings' to see the updated template. The text can be edited by clicking on the relevant field on the document itself.</p>
+                <p className='Settings-P'>You can edit the template bellow and make it your own. Adjust the number of fields under 'Settings' to update the template accordingly. The text can be edited by clicking on the relevant field on the document itself.</p>
                 <h3 className='Settings-H3'>Settings:</h3>
                 <form action="">
                     <fieldset className='Settings-Fieldset'>
                         <legend>Left Section</legend>
                         <label htmlFor="LanguageSetting"> Number of language fields:
-                            <select name="LanguageSetting" id="LanguageSetting" defaultValue="3">
+                            <select name="LanguageSetting" id="LanguageSetting" defaultValue="3" onChange={e => this.changeSettings(e)}>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -42,7 +41,7 @@ class Settings extends Component {
                             </select>
                         </label>
                         <label htmlFor="SkillsSetting"> Number of skill fields:
-                            <select name="SkillsSetting" id="SkillsSetting" defaultValue="3">
+                            <select name="SkillsSetting" id="SkillsSetting" defaultValue="3" onChange={e => this.changeSettings(e)}>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -51,7 +50,7 @@ class Settings extends Component {
                             </select>
                         </label>
                         <label htmlFor="ProfileSetting"> Number of profile paragraphs:
-                            <select name="ProfileSetting" id="ProfileSetting" defaultValue="3">
+                            <select name="ProfileSetting" id="ProfileSetting" defaultValue="3" onChange={e => this.changeSettings(e)}>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -62,15 +61,24 @@ class Settings extends Component {
                     <fieldset className='Settings-Fieldset'>
                         <legend>Right Section</legend>
                         <label htmlFor="ExperienceSetting"> Number of experience fields:
-                            <select name="ExperienceSetting" id="ExperienceSetting" defaultValue="3">
+                            <select name="ExperienceSetting" id="ExperienceSetting" defaultValue="2" onChange={e => this.changeSettings(e)}>
                                 <option value="1">1</option>
-                                <option value="2" >2</option>
+                                <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </label>
+                        <label htmlFor="EducationSetting"> Number of education fields:
+                            <select name="EducationSetting" id="EducationSetting" defaultValue="2" onChange={e => this.changeSettings(e)}>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </label>
                     </fieldset>
-                    <button className='Settings-Btn'>Save Settings</button>
                     <button className='Settings-Btn' onClick={this.printPDF}>Save CV as PDF</button>
                 </form>
                 <h3 className='Settings-H3'>Editable CV Template:</h3>

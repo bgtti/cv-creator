@@ -9,8 +9,13 @@ class CVPage extends Component {
             <div className='CVPage'>
                 <div className='CVPage-TopMargin'></div>
                 <div className='CVPage-Content'>
-                    <LeftSection></LeftSection>
-                    <RightSection></RightSection>
+                    <LeftSection
+                        LanguageNr={this.props.LanguageSetting}
+                        SkillsNr={this.props.SkillsSetting}
+                        ProfileNr={this.props.ProfileSetting}></LeftSection>
+                    <RightSection
+                        ExperienceNr={this.props.ExperienceSetting}
+                        EducationNr={this.props.EducationSetting}></RightSection>
                     <div className='CVPage-RightMargin'></div>
                 </div>
             </div>

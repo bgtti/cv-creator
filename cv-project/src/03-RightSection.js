@@ -10,7 +10,6 @@ class RightSection extends Component {
             Name: "SAMANTHA BEE",
             AboutMe: "Diligent software designer with 3+ years of experience in business application development. Eager to design innovative solutions and user-friendly interfaces clients will love. Eager to join a new team of professionals and develop cutting-edge solutions with the newest available technology.",
             //Experience
-            ExperienceNr: "2",
             Experience: [
                 { key: "0000", company: "AwesomeDees Ltd", years: "2015 - present", text: "Member of Agile Scrum developing team, I architect and design software solution for a wide range of clients. Implementing and negotiating changes with customers are part of my routine, and I enjoy taking ownership of the architecture of applications built for a global customer base." },
                 { key: "0001", company: "Le Design Corp", years: "2019 - 2020", text: "During my internship in software design and development I used modern JavaScript libraries to create optimal solutions. The constant use of Figma, Canva, and Photoshop boosted my design skills, and I enjoyed wireframing beautiful smart websites to international clients. " },
@@ -19,7 +18,6 @@ class RightSection extends Component {
                 { key: "0004", company: "Company 5", years: "19XX - 19XX", text: "Lorem..." },
             ],
             //Education
-            EducationNr: "2",
             Education: [
                 { key: "00000", institution: "Sissus University", years: "2015 - 2019", text: "Bsc in Computer Science, online degree." },
                 { key: "00001", institution: "Liceu Bon Colegio", years: "2015", text: "Baccalaureate obtained." },
@@ -61,7 +59,7 @@ class RightSection extends Component {
     }
     generateExperienceFields() {
         let experience = [...this.state.Experience];
-        experience.splice(parseInt(this.state.ExperienceNr), (5 - parseInt(this.state.ExperienceNr)));
+        experience.splice(parseInt(this.props.ExperienceNr), (5 - parseInt(this.props.ExperienceNr)));
 
         return (
             <div>
@@ -73,7 +71,7 @@ class RightSection extends Component {
     }
     generateEducationFields() {
         let education = [...this.state.Education];
-        education.splice(parseInt(this.state.EducationNr), (5 - parseInt(this.state.EducationNr)));
+        education.splice(parseInt(this.props.EducationNr), (5 - parseInt(this.props.EducationNr)));
 
         return (
             <div>

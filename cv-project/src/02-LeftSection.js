@@ -20,7 +20,6 @@ class LeftSection extends Component {
             LinkedInLabel: "LinkedIn Profile:",
             LinkedIn: "Linkedin.com/in/usernamehere",
             //Languages
-            LanguageNr: "3", //probably in parent
             Languages: [
                 { key: "0", name: "English", level: "6" },
                 { key: "1", name: "Spanish", level: "5" },
@@ -29,7 +28,6 @@ class LeftSection extends Component {
                 { key: "4", name: "Cantonese", level: "3" }
             ],
             //Skills
-            SkillsNr: "3", //probably in parent
             Skills: [
                 { key: "00", name: "Javascript" },
                 { key: "01", name: "Python" },
@@ -38,7 +36,6 @@ class LeftSection extends Component {
                 { key: "04", name: "AWS" }
             ],
             //Profile
-            ProfileNr: "2", //probably in parent
             Profile: [
                 { key: "000", text: "Flexible to adapt to priorities, change in responsibilities and schedule." },
                 { key: "001", text: "Enjoy planning and staying organized by making use of different available technologies." },
@@ -75,7 +72,7 @@ class LeftSection extends Component {
     }
     generateLanguageFields() {
         let languages = [...this.state.Languages];
-        let langSpoken = parseInt(this.state.LanguageNr)
+        let langSpoken = parseInt(this.props.LanguageNr)
         let popNr = 5 - langSpoken;
         languages.splice(langSpoken, popNr);
 
@@ -104,7 +101,7 @@ class LeftSection extends Component {
     }
     generateProfileFields() {
         let profiles = [...this.state.Profile];
-        profiles.splice(parseInt(this.state.ProfileNr), (3 - parseInt(this.state.ProfileNr)));
+        profiles.splice(parseInt(this.props.ProfileNr), (3 - parseInt(this.props.ProfileNr)));
         return (
             <div>
                 {profiles.map(item => (
@@ -115,7 +112,7 @@ class LeftSection extends Component {
     }
     generateSkillFields() {
         let skills = [...this.state.Skills];
-        skills.splice(parseInt(this.state.SkillsNr), (5 - parseInt(this.state.SkillsNr)));
+        skills.splice(parseInt(this.props.SkillsNr), (5 - parseInt(this.props.SkillsNr)));
         return (
             <div>
                 {skills.map(item => (
