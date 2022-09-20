@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SampleImage from './Images/Image_CV.jpg';
 import './02-LeftSection.css';
+import LeftSectionLanguages from './02-LeftSection-Languages';
 
 class LeftSection extends Component {
     constructor(props) {
@@ -15,15 +16,63 @@ class LeftSection extends Component {
             Address1: "Lilly Str 44",
             Address2: "6000 Luzern",
             LinkedInLabel: "LinkedIn Profile:",
-            LinkedIn: "Linkedin.com/in/usernamehere"
-            //Languages... Skills... Profile....
+            LinkedIn: "Linkedin.com/in/usernamehere",
+            //Languages...
+            LanguageNr: "3", //probably in parent
+            Languages: [
+                { key: "0", name: "English", level: "6" },
+                { key: "1", name: "Spanish", level: "5" },
+                { key: "2", name: "French", level: "3" },
+                { key: "3", name: "Italian", level: "3" },
+                { key: "4", name: "Cantonese", level: "3" }
+            ],
+            SkillsNr: "3", //probably in parent
+            Skills: [
+                { key: "00", name: "English" },
+                { key: "01", name: "Spanish" },
+                { key: "02", name: "French" },
+                { key: "03", name: "Italian" },
+                { key: "04", name: "Cantonese" }
+            ],
+            //Skills... 
+            //Profile....
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleLanguageChange = this.handleLanguageChange.bind(this);
+        this.generateLanguageFields = this.generateLanguageFields.bind(this);
     }
     handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value
         });
+    }
+    handleLanguageChange(e) {
+        let languages = [...this.state.Languages];
+        if (e.target.dataset.langid === "langName") {
+            languages[e.target.dataset.langindex].name = e.target.value;
+            this.setState({
+                Languages: languages
+            });
+        } else if (e.target.dataset.langid === "langLevel") {
+            languages[e.target.dataset.langindex].level = e.target.dataset.langlevel;
+            this.setState({
+                Languages: languages
+            });
+        }
+    }
+    generateLanguageFields() {
+        let languages = [...this.state.Languages];
+        let langSpoken = parseInt(this.state.LanguageNr)
+        let popNr = 5 - langSpoken;
+        languages.splice(langSpoken, popNr);
+
+        return (
+            <div>
+                {languages.map(item => (
+                    < LeftSectionLanguages langIndex={`${item.key}`} key={item.key} value={item.name} level={item.level} handleLanguageChange={this.handleLanguageChange} />
+                ))}
+            </div>
+        )
     }
     render() {
         return (
@@ -76,22 +125,7 @@ class LeftSection extends Component {
 
                     <fieldset className="LeftSection-Fieldset">
                         <legend>Languages</legend>
-                        <p className='LeftSection-Margin0'>
-                            <label htmlFor="Language1Label">
-                                <input type="text" name="Language1Label" id="Language1Label" placeholder="English:" />
-                            </label>
-                            <label htmlFor="Language1">
-                                <input type="text" name="Language1" id="Language1" placeholder="Fluent" />
-                            </label>
-                        </p>
-                        <p className='LeftSection-Margin0'>
-                            <label htmlFor="Language1Label">
-                                <input type="text" name="Language2Label" id="Language2Label" placeholder="German:" />
-                            </label>
-                            <label htmlFor="Language1">
-                                <input type="text" name="Language2" id="Language2" placeholder="Fluent" />
-                            </label>
-                        </p>
+                        {this.generateLanguageFields()}
                     </fieldset>
                     <fieldset className="LeftSection-Fieldset">
                         <legend>Skills</legend>

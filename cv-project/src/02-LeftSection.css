@@ -39,3 +39,40 @@ margin: 0 1mm 0 5mm;
     /* background-color: blue; */
     margin: 0;
 }
+
+/* Language Rating */
+.LeftSection-LanguageSubContainer{
+    display: flex;
+    align-items: center;
+}
+.LeftSection-LanguageName{
+    width: 38mm;
+    margin-right: 1mm;
+    border:none;
+
+}
+.LeftSection-LanguageRating{
+    display:flex;
+    gap: 1mm;
+}
+.LeftSection-LanguageRating div{
+    border-radius: 50%;
+    height: 2mm;
+    width: 2mm;
+    border: 0.5mm solid black;
+    cursor: pointer;
+}
+@media (hover:hover){
+    .LeftSection-LanguageRating:hover div {
+        background-color: black;
+    }
+    .LeftSection-LanguageRating div:hover{
+        background-color: black;
+    }
+    .LeftSection-LanguageRating div:hover ~ div {
+        background-color: white;
+    }
+}
+.LeftSection-LangLevelColoured{
+    background-color: black;
+}
