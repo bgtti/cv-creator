@@ -3,6 +3,7 @@ import './App.css';
 import CVPage from './01-CVPage.js'
 import Settings from './04-Settings.js'
 import Footer from './05-Footer.js'
+import SampleImage from './Images/Image_CV.jpg';
 
 
 class App extends Component {
@@ -10,12 +11,13 @@ class App extends Component {
     super(props);
     this.state = {
       //to be passed down to Left Section of CV
+      ImageSetting: SampleImage,
       LanguageSetting: "3",
-      SkillsSetting: "3",
-      ProfileSetting: "2",
+      SkillsSetting: "5",
+      ProfileSetting: "3",
       //to be passed down to Right Section of CV
-      ExperienceSetting: "2",
-      EducationSetting: "2"
+      ExperienceSetting: "3",
+      EducationSetting: "3"
     }
     this.generatePDF = this.generatePDF.bind(this);
     this.handleSettingsChange = this.handleSettingsChange.bind(this);
@@ -41,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Settings pdfPrint={this.generatePDF} changeSettings={this.handleSettingsChange}></Settings>
+        <Settings pdfPrint={this.generatePDF} changeSettings={this.handleSettingsChange} ImageSetting={this.state.ImageSetting}></Settings>
         <CVPage {...this.state}></CVPage>
         <Footer></Footer>
       </div>

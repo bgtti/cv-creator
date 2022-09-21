@@ -31,6 +31,9 @@ class Settings extends Component {
                 <form action="">
                     <fieldset className='Settings-Fieldset'>
                         <legend>Left Section</legend>
+                        <label htmlFor="ImageSetting"> Image link:
+                            <input type="text" name="ImageSetting" id="ImageSetting" value={this.props.ImageSetting} onChange={e => this.changeSettings(e)} className='Settings-InputField' />
+                        </label>
                         <label htmlFor="LanguageSetting"> Number of language fields:
                             <select name="LanguageSetting" id="LanguageSetting" defaultValue="3" onChange={e => this.changeSettings(e)}>
                                 <option value="1">1</option>
@@ -41,7 +44,7 @@ class Settings extends Component {
                             </select>
                         </label>
                         <label htmlFor="SkillsSetting"> Number of skill fields:
-                            <select name="SkillsSetting" id="SkillsSetting" defaultValue="3" onChange={e => this.changeSettings(e)}>
+                            <select name="SkillsSetting" id="SkillsSetting" defaultValue="5" onChange={e => this.changeSettings(e)}>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -61,7 +64,7 @@ class Settings extends Component {
                     <fieldset className='Settings-Fieldset'>
                         <legend>Right Section</legend>
                         <label htmlFor="ExperienceSetting"> Number of experience fields:
-                            <select name="ExperienceSetting" id="ExperienceSetting" defaultValue="2" onChange={e => this.changeSettings(e)}>
+                            <select name="ExperienceSetting" id="ExperienceSetting" defaultValue="3" onChange={e => this.changeSettings(e)}>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -70,7 +73,7 @@ class Settings extends Component {
                             </select>
                         </label>
                         <label htmlFor="EducationSetting"> Number of education fields:
-                            <select name="EducationSetting" id="EducationSetting" defaultValue="2" onChange={e => this.changeSettings(e)}>
+                            <select name="EducationSetting" id="EducationSetting" defaultValue="3" onChange={e => this.changeSettings(e)}>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>

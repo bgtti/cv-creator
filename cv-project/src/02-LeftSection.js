@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SampleImage from './Images/Image_CV.jpg';
 import './02-LeftSection.css';
 import LeftSectionLanguages from './02-LeftSection-Languages.js';
 import LeftSectionSkills from './02-LeftSection-Skills.js';
@@ -14,7 +13,7 @@ class LeftSection extends Component {
             Email: "samantha@igg.com",
             PhoneNumberLabel: "Phone Number:",
             PhoneNumber: "+41 70 555 22 11",
-            AddressLabel: "Address",
+            AddressLabel: "Address:",
             Address1: "Lilly Str 44",
             Address2: "6000 Luzern",
             LinkedInLabel: "LinkedIn Profile:",
@@ -105,7 +104,7 @@ class LeftSection extends Component {
         return (
             <div>
                 {profiles.map(item => (
-                    < LeftSectionProfile profIndex={`${item.key}`} key={item.key} value={item.text} handleChange={this.handleProfileOrSkillChange} />
+                    < LeftSectionProfile profIndex={`${item.key}`} key={item.key} value={item.text} handleChange={this.handleProfileOrSkillChange} resizeTextArea={this.props.resizeTextArea} />
                 ))}
             </div>
         )
@@ -125,7 +124,7 @@ class LeftSection extends Component {
         return (
             <section className="LeftSection">
                 <form action="">
-                    <input type="image" name="ImageCV" id="ImageCV" src={SampleImage} alt="ImageCV" className="LeftSection-Image" />
+                    <input type="image" name="ImageCV" id="ImageCV" src={this.props.ImageSetting} alt="ImageCV" className="LeftSection-Image" />
 
                     <fieldset className="LeftSection-Fieldset">
                         <legend>Contact</legend>

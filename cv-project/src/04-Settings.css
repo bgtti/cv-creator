@@ -63,11 +63,19 @@
 
 @media (min-width: 211mm) {
     .Settings-Fieldset legend {
-            text-align: center;
-            margin-left: 0;
-        }
+        text-align: center;
+        margin-left: 0;
+    }
 }
 
+.Settings-InputField{
+    background-color:var(--cBackgroundGray);
+    border: none;
+    border-bottom: 0.3mm solid gray;
+    width: 100mm;
+    margin-left: 3mm;
+    color: var(--cGray);
+}
 .Settings-Fieldset select {
     background-color: var(--cBackgroundGray);
     margin-left: 5px;

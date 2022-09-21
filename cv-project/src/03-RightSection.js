@@ -8,20 +8,20 @@ class RightSection extends Component {
         super(props);
         this.state = {
             Name: "SAMANTHA BEE",
-            AboutMe: "Diligent software designer with 3+ years of experience in business application development. Eager to design innovative solutions and user-friendly interfaces clients will love. Eager to join a new team of professionals and develop cutting-edge solutions with the newest available technology.",
+            AboutMe: "Diligent software designer with 8+ years of experience in business application development. Eager to design innovative solutions with user-friendly interfaces clients will love. Software developer with a passion for design and experience in system architecture. Eager to join a new team of professionals and develop cutting-edge solutions with the newest available technology.",
             //Experience
             Experience: [
-                { key: "0000", company: "AwesomeDees Ltd", years: "2015 - present", text: "Member of Agile Scrum developing team, I architect and design software solution for a wide range of clients. Implementing and negotiating changes with customers are part of my routine, and I enjoy taking ownership of the architecture of applications built for a global customer base." },
-                { key: "0001", company: "Le Design Corp", years: "2019 - 2020", text: "During my internship in software design and development I used modern JavaScript libraries to create optimal solutions. The constant use of Figma, Canva, and Photoshop boosted my design skills, and I enjoyed wireframing beautiful smart websites to international clients. " },
-                { key: "0002", company: "Company 3", years: "20XX - 20XX", text: "Lorem..." },
+                { key: "0000", company: "AwesomeDees Ltd", years: "2020 - present", text: "Member of Agile Scrum developing team, I architect and design software solution for a wide range of clients. Implementing and negotiating changes with customers are part of my routine, and I enjoy taking ownership of the architecture of small and large applications built for a global customer base. " },
+                { key: "0001", company: "WebWonder Giants Ltd", years: "2015 - 2020", text: "Using a variety of programming languages in developing big-scale cloud-based software was very rewarding. Responsible for doing technical research for common testing tools and using them in testing, I also coordinated communications between the development and QA teams with the goal of improving the quality of testing." },
+                { key: "0002", company: "Le Design Corp", years: "2014 - 2015", text: "During my internship in software design and development I used modern JavaScript libraries to create optimal solutions. The constant use of Figma, Canva, and Photoshop boosted my design skills, and I enjoyed wireframing beautiful smart websites to international clients. The internship gave me the oportunity to also find out more about system architecture, a path I decided to take." },
                 { key: "0003", company: "Company 4", years: "20YY - 20YY", text: "Lorem..." },
                 { key: "0004", company: "Company 5", years: "19XX - 19XX", text: "Lorem..." },
             ],
             //Education
             Education: [
-                { key: "00000", institution: "Sissus University", years: "2015 - 2019", text: "Bsc in Computer Science, online degree." },
-                { key: "00001", institution: "Liceu Bon Colegio", years: "2015", text: "Baccalaureate obtained." },
-                { key: "00002", institution: "Institution 3", years: "20XX - 20XX", text: "Lorem..." },
+                { key: "00000", institution: "Leretescius University", years: "2019", text: "Online course on system architecture and design." },
+                { key: "00001", institution: "Sissus University", years: "2010-2014", text: "Bsc in Computer Science." },
+                { key: "00002", institution: "Liceu Bon Colegio", years: "2010", text: "Baccalaureate." },
                 { key: "00003", institution: "Institution 4", years: "20YY - 20YY", text: "Lorem..." },
                 { key: "00004", institution: "Institution 5", years: "19XX - 19XX", text: "Lorem..." },
             ],
@@ -35,6 +35,9 @@ class RightSection extends Component {
         this.setState({
             [e.target.name]: e.target.value
         });
+        if (e.target.tagName === 'TEXTAREA') {
+            this.props.resizeTextArea(e)
+        }
     }
     handleExperienceOrEducationChange(e) {
         if (e.target.dataset.type === "experience") {
@@ -55,6 +58,9 @@ class RightSection extends Component {
             this.setState({
                 Education: education
             });
+        }
+        if (e.target.tagName === 'TEXTAREA') {
+            this.props.resizeTextArea(e)
         }
     }
     generateExperienceFields() {
@@ -94,7 +100,7 @@ class RightSection extends Component {
                         <legend>About me</legend>
                         <p>
                             <label htmlFor="AboutMe">
-                                <textarea name="AboutMe" id="AboutMe" cols="30" rows="10" value={this.state.AboutMe} onChange={this.handleChange}></textarea>
+                                <textarea name="AboutMe" id="AboutMe" cols="61" maxLength="800" value={this.state.AboutMe} onChange={this.handleChange} className='RightSection-TextArea RightSection-TextAreaMinHeight'></textarea>
                             </label>
                         </p>
                     </fieldset>

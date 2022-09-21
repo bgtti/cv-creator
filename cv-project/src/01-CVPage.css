@@ -8,19 +8,17 @@
     height: 297mm;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
 }
 .CVPage-TopMargin{
-    height: 5mm;
+    height: 20mm;
 }
 .CVPage-Content{
+    flex-grow: 10;
     display: flex;
-    gap: 3mm;
-    
-}
-.CVPage-RightMargin {
-    width: 5mm;
-    height: 5mm;
-    background-color: aqua;
+    gap: 5mm;
+
 }
 .CVPagePrinting{
     box-shadow:none;
